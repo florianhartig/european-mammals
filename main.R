@@ -49,9 +49,9 @@ for(i in 1:length(files2)){
 
 # extract coordinates from kml-files and join them with abundance of desired species to get a subset of the species per
 # desired area.
-crd <- coordinates(cgrs_estonia.kml)
+crd <- coordinates(cgrs_france.kml)
 crd <- as.data.frame(crd)
-crd <- cbind(crd, cgrs_estonia.kml@data$Name)
+crd <- cbind(crd, cgrs_france.kml@data$Name)
 colnames(crd) <- c("X", "Y", "SQ")
 apo_fla_est <- join(crd, apo_fla, by="SQ")
 coordinates(apo_fla_est) <- ~X+Y
@@ -63,8 +63,31 @@ apo_fla_post70_1 <- subset(apo_fla_est, apo_fla_est$occ=="post70_1")
 apo_fla_pre70_2 <- subset(apo_fla_est, apo_fla_est$occ=="pre70_2")
 apo_fla_post70_2 <- subset(apo_fla_est, apo_fla_est$occ=="post70_2")
 
-plot(cgrs_estonia.kml)
-plot(Estonia_EBBA2_grid.shp, add=T)
-points(apo_fla_post70_1, pch=16, cex=3)
+plot(cgrs_france.kml)
+plot(France_EBBA2_grid.shp, add=T)
+points(apo_fla_post70_1, pch=16, cex=1)
 
 ## next: function that puts together the grid of several countries and extracts coordinates from these.
+
+values500 <- read.csv("/home/steffen/Documents/git/PhD/small mammals and the landscape/data/values_500_40.csv")
+coordinates(values500) <- ~X+Y
+
+study <- "butet2006"; years <- 1995
+meta <- read.csv(paste("/home/steffen/Documents/git/PhD/small mammals and the landscape/data/", study, "/", study, "_meta_", years[i], ".csv", sep=""))
+coordinates(meta) <- ~X+Y
+points(meta, col="red")
+
+coordinates(cgrs_france.kml@polygons[[1]]@Polygons[[1]])
+blubb <- coordinates(cgrs_france.kml@polygons[[1]]@Polygons[[1]])
+blubb <- as.data.frame(blubb)
+
+
+
+# make map of studies
+values500 <- read.csv("/home/steffen/Documents/git/PhD/small mammals and the landscape/data/values_500_40.csv")
+coordinates(values500) <- ~X+Y
+
+par(mar=c(0, 0, 0, 0))
+plot(eu, lwd=.5)
+points(values500, col="red", pch=3, cex=.4, lwd=.1)
+points(apo_fla_post70_1, pch=16, cex=0.5)
