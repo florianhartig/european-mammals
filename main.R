@@ -1,21 +1,16 @@
-setwd("~/Documents/git/European Mammals")
+setwd("/home/steffen/Documents/git/European Mammals/")
 library(raster); library(maptools); library(ggplot2); library(rgdal); library(rgeos); library(plyr); library(dplyr)
-txt <- readLines("./data/SVGs/Apodemus flavicollis.svg")
 
-txt <- txt[grep("use id=", txt)]
-txt2 <- sub('<use id=\"', "", txt)
-txt3 <- sub('\"', "", txt2)
-txt4 <- sub('xlink:href=\"', "", txt3)
-txt5 <- sub('#', "", txt4)
-txt6 <- sub('\"/>', "", txt5)
+source("./code/build_index_occurences.R"); source("./code/extract_occurence.R"); source("./code/check.R")
+index <- build_index_occurences(path="./data/SVGs/", elements=3)
 
-l1 <- strsplit(txt6, " ")
-df <- as.data.frame(t(as.data.frame(l1)))
-df <- df[-c(2, 3)]
-rownames(df) <- NULL
-colnames(df) <- c("SQ", "occ")
-apo_fla <- df
-rm("txt", "txt2", "txt3", "txt4", "txt5", "txt6", "l1", "df")
+soi <- c("apo_syl", "apo_fla", "mic_sub", "mic_agr", "sor_min", "sor_ara", "myo_gla")
+
+soi2 <- index$species[index$short %in% soi]
+soi2 <- soi2[-7]
+extract_occurences(path="./data/SVGs/", soi2)
+
+occ <- check_coordinates(coords=, proj=, sbst=, )
 
 laea <- c("+proj=laea +lat_0=52 +lon_0=10 +x_0=4321000 +y_0=3210000 +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs")
 wgs84 <- c("+proj=longlat +datum=WGS84 +no_defs")
@@ -91,3 +86,8 @@ par(mar=c(0, 0, 0, 0))
 plot(eu, lwd=.5)
 points(values500, col="red", pch=3, cex=.4, lwd=.1)
 points(apo_fla_post70_1, pch=16, cex=0.5)
+
+
+
+
+# for PhD
