@@ -1,10 +1,10 @@
-extract_occurences <- function(path=getwd(), soi=NULL){
+load_species <- function(path=getwd(), soi=NULL){
   
   pb <- txtProgressBar(min = 0, max = length(soi), style = 3, char=">", width=getOption("width")-14)
   
   for(i in 1:length(soi)){
     # read in *.svg of i-th species of interest
-    txt <- suppressWarnings(readLines(paste(path, soi[i], ".svg", sep="")))
+    txt <- suppressWarnings(readLines(paste(path, "/SVGs/", soi[i], ".svg", sep="")))
     
     # throw out uninteresting lines
     txt <- txt[grep("use id=", txt)]
