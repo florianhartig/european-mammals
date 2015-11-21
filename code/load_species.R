@@ -2,6 +2,9 @@ load_species <- function(path=getwd(), soi=NULL){
   
   pb <- txtProgressBar(min = 0, max = length(soi), style = 3, char=">", width=getOption("width")-14)
   
+  # include definition of variables via a potentially defined index here, like it has been done in "load_species()".
+  
+  
   for(i in 1:length(soi)){
     # read in *.svg of i-th species of interest
     txt <- suppressWarnings(readLines(paste(path, "/SVGs/", soi[i], ".svg", sep="")))

@@ -14,7 +14,9 @@ load_spatial <- function(path=getwd(), sbst=NULL, load=NULL, index=NULL){
   
   shape <- list.files(paste(path, "/spatial/", sep=""), pattern="[.]shp$")
   grid <- list.files(paste(path, "/spatial/", sep=""), pattern="[.]kml$")
+  
   if(!is.null(sbst)){
+    
     if(!is.null(index)){
       shape <- index$shape[index$code %in% sbst]
       grid <- index$grid[index$code %in% sbst]
@@ -30,6 +32,7 @@ load_spatial <- function(path=getwd(), sbst=NULL, load=NULL, index=NULL){
       shape <- shape[sbst1]
       grid <- grid[sbst2]
     }
+    
   }
   
   

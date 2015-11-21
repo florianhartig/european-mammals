@@ -16,14 +16,14 @@ check_data <- function(data, index=NULL, column=NULL, mask=NULL){
           if(exists(orig)){
             new <- c(new, orig)
           } else{
-            warning(paste("'", orig, "' does not seem to be defined. Please check if the species is loaded into the environment or built an index with correct names and relations (build_index()).", sep=""))
+            warning(paste("'", orig, "' is not available and can't be processed.\n   Either '", orig, "' is not loaded into the environment or the index for this object is not defined properly.", sep=""))
           }
         } else{
-          warning(paste("'", data[i], "' does not seem to be defined. Please check if the species name is given correctly or built an index with correct names and relations.", sep=""))
+          warning(paste("'", data[i], "' is not available and can't be processed.\n   Either '", data[i], "' is not loaded into the environment or the index for this object is not defined properly.", sep=""))
         }
         
       } else{
-        warning(paste("'", data[i], "' is not specified properly, it will not be processed. \n Use 'build_index()' and use the output in 'species_ind = ' to help with this or give the respective name in 'soi' which is defined already.", sep=""))
+        warning(paste("'", data[i], "' is not available and can't be processed.\n   Provide correct names or and index which gives relations between abbreviations and correct names (build_index()).", sep=""))
       }
     }
   }
