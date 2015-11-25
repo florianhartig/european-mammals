@@ -8,13 +8,12 @@ source("./code/check_data.R"); source("./code/european_mammals.R")
 abbr_species <- "tolower(paste(substr(unlist(strsplit(files[i], ' ')), 1, 3), collapse = '_'))"
 index_species <- build_index(path="./data/SVGs/", type="svg", abbr=abbr_species)
 
-setwd("/home/steffen/Documents/git/European Mammals/data/spatial/")
 abbr_shape <- "paste(unlist(strsplit(files[i], '_'))[1:(length(unlist(strsplit(files[i], '_')))-2)], collapse='_')"
-index_shape <- build_index(type="shp", incl=TRUE, abbr=abbr_shape)
+index_shape <- build_index(path="./data/spatial/", type="shp", incl=TRUE, abbr=abbr_shape)
 index_shape$code[15] <- "Europe"; index_shape$code[16] <- "europe_borders"
 
 abbr_grid <- "paste(paste(toupper(substr(unlist(strsplit(files[i], '_'))[-1], 1, 1)), substr(unlist(strsplit(files[i], '_'))[-1], 2, nchar(unlist(strsplit(files[i], '_'))[-1])), sep=''), collapse='_')"
-index_grid <- build_index(type="kml", incl=TRUE, abbr=abbr_grid)
+index_grid <- build_index(path="./data/spatial/", type="kml", incl=TRUE, abbr=abbr_grid)
 index_grid$code <- substr(index_grid$code, 1, nchar(index_grid$code)-4)
 index_grid$code[8] <- "Bosnia_and_Herzegovina"
 
@@ -26,8 +25,8 @@ index_spatial2 <- data.frame(code = index_spatial$code, shape = paste(index_spat
 rm(index_grid, index_shape, abbr_grid, abbr_shape, abbr_species)
 
 # load spatial and species information
-setwd("/home/steffen/Documents/git/European Mammals/data/")
-load_spatial(sbst=c("Europe", "Spain", "France", "Czech_Republic", "Poland", "Norway", 
+# setwd("/home/steffen/Documents/git/European Mammals/data/")
+load_spatial(path="./data/spatial/", sbst=c("Europe", "Spain", "France", "Czech_Republic", "Poland", "Norway", 
                     "Germany", "United_Kingdom", "Sweden", "Finland"), 
              index=index_spatial, load="grids")
 
@@ -35,7 +34,7 @@ soi <- c("apo_syl", "apo_fla", "mic_sub", "mic_agr", "sor_min", "sor_ara", "myo_
 
 soi2 <- index_species$original[index_species$code %in% soi]
 soi2 <- soi2[-7]
-load_species(soi = soi2)
+load_species(path="./data/SVGs/", soi = soi2)
 
 euro_sp_country <- european_mammals(type="country", 
                  c("Spain", "France", "Czech_Republic", "Poland", "Norway", 
