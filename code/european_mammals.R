@@ -2,20 +2,6 @@ european_mammals <- function(type=c("points", "polygon", "country", "identify"),
                              data, buffer=NULL, soi=NULL, 
                              index_species=NULL, index_spatial=NULL, mask=NULL){
   
-  # debugging:
-  #   path <- setwd("/home/steffen/Documents/git/European Mammals/data/")
-  #   type <- "country"
-  #   # data <- c("Spain", "France", "Czech_Republic", "Poland", "Norway", "Germany", "United_Kingdom", "Sweden", "Finland")
-  #   # data for 'points
-  #   study <- "butet2006"; years <- 1995
-  #   data <- read.csv(paste("/home/steffen/Documents/git/PhD/small mammals and the landscape/data/", study, "/", study, "_meta_", years, ".csv", sep=""))
-  #   buffer <- NULL
-  #   soi <- soi2
-  #   index_species <- index_species
-  #   index_spatial <- index_spatial2
-  #   mask <- "Sorex minutissimus"
-  #   the_grid <- France_grid
-  
   # type            chose which type the data have. The choice is between coordinates (points), one polygon (polygon), a
   #                 set of countries (country) or some shape drawn on the current plot (identify).
   # data            give here the respective data, as defined in 'type'.
@@ -28,11 +14,11 @@ european_mammals <- function(type=c("points", "polygon", "country", "identify"),
   #                 All spatial data should be loaded into the environment already, otherwise a warning will appear and
   #                 only the already loaded data will be used.
   # buffer          meters around which the data should be buffered. One grid of the AFE-grid has an extent of 50kmx50km.
-  # soi             name of species to get information for. Can be abbreviated but than and index should be built
+  # soi             name of species to get information for. Can be abbreviated but than an index should be built
   #                 (build_index()) or the species should be defined and loaded into the environment with their
   #                 abbreviated names. 
   # index_species   give index where abbreviations in 'soi' and their original names are given.
-  # index_spatial   
+  # index_spatial   give index where spatil objects can be looked up.
   # mask            give the names of species here, which should be excluded from any querry. Must be defined as full 
   #                 species name as given by the original data.
   
@@ -80,14 +66,19 @@ european_mammals <- function(type=c("points", "polygon", "country", "identify"),
         square_names <- c(unlist(lapply(strsplit(row.names(square), " "), function(x) x[[1]])))
       }
       
-      for(k in 1:length(soi2)){
+      for(k in 1:length(soi)){
         
-        species <- get(soi2[k])
+        species <- get(soi[k])
         species$SQ <- as.character(species$SQ)
         species_sub <- species[species$SQ %in% square_names,]
         ds <- dim(species_sub)[1]
-        occurences_temp <- cbind(point=rep(j, ds), species=rep(soi2[k], ds), species_sub)
+        if(ds==0){
+          ds <- 1
+          species_sub <- data.frame(SQ=NA, occ=NA)
+        }
+        occurences_temp <- cbind(point=rep(j, ds), species=rep(soi[k], ds), species_sub)
         occurences <- rbind(occurences, occurences_temp)
+        
         
       }
       
@@ -122,14 +113,14 @@ european_mammals <- function(type=c("points", "polygon", "country", "identify"),
       crd <- cbind(crd, country@data$Name)
       colnames(crd) <- c("X", "Y", "SQ")
       
-      for(k in 1:length(soi2)){
+      for(k in 1:length(soi)){
         
-        species <- get(soi2[k])
+        species <- get(soi[k])
         species$SQ <- as.character(species$SQ)
         species_sub <- species[species$SQ %in% crd$SQ,]
         # species_sub <- join(crd, species, by="SQ")
         ds <- dim(species_sub)[1]
-        occurences_temp <- cbind(country=rep(data[j], ds), species=rep(soi2[k], ds), species_sub)
+        occurences_temp <- cbind(country=rep(data[j], ds), species=rep(soi[k], ds), species_sub)
         occurences <- rbind(occurences, occurences_temp)
         
       }
