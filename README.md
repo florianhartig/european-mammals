@@ -1,14 +1,9 @@
 # European Mammals
 Code and instruction how to extract occurence data from www.european-mammals.org svg-maps, export them as tables and plot them in new, modifyable R-graphics.
 
-Jump to
+Jump to:
 * [Motivation](https://github.com/EhrmannS/european-mammals#motivation)
-* [The Procedure](https://github.com/EhrmannS/european-mammals#the-procedure)
-  * [build_index()](https://github.com/EhrmannS/european-mammals#build_index)
-  * [load_spatial()](https://github.com/EhrmannS/european-mammals#load_spatial)
-  * [load_species()](https://github.com/EhrmannS/european-mammals#load_species)
-  * [european_mammals()](https://github.com/EhrmannS/european-mammals#european_mammals)
-  * [check_data()](https://github.com/EhrmannS/european-mammals#check_data)
+* [The Procedure](https://github.com/EhrmannS/european-mammals#the-procedure) ([build_index()](https://github.com/EhrmannS/european-mammals#build_index), [load_spatial()](https://github.com/EhrmannS/european-mammals#load_spatial), [load_species()](https://github.com/EhrmannS/european-mammals#load_species), [european_mammals()](https://github.com/EhrmannS/european-mammals#european_mammals), [check_data()](https://github.com/EhrmannS/european-mammals#check_data))
 * [Examples](https://github.com/EhrmannS/european-mammals#examples)
 
 
