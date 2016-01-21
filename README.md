@@ -24,14 +24,18 @@ Often we want to use some kind of abbreviation for species and maybe also for sp
 In the following paragraphs you will find an explanation to the exact functionality of each of these functions and a documentation on all their arguments.
 ### build_index()
 [build_index()](https://github.com/EhrmannS/european-mammals/blob/master/code/build_index.R) is the first function we usually run. A typical use-case is, if we want to work with some kind of abbreviation for the species we are dealing with. I prefer a three letter code (apo_fla) to abbreviate the species I am working with, but in some cases 
-* two letters might be enough (APFL) or 
-* four letters might be required or 
+* two letters might be enough (ap_fl) or 
+* four letters might be required (apod_flav) or 
 * only the genus of a group of species is required and/or 
-* you prefer other combinations of some kind (ApoFla).
-The only limitation for this function is, that the abbreviation must be somehow a derivative of the original names, this becomes more apparent soon.  
-We should, however, not only build an index for the species we are working with, but also for the spatial files we have to load into the environment. 
+* you prefer other combinations of some kind (ApoFla, APFL, Apo_fla, ...).  
+The only limitation for this function is, that the abbreviation must be somehow a derivative of the original names, this becomes more apparent soon.
 
+We should, however, not only build an index for the species we are working with, but also for the spatial files we have to load into the environment. Let me mention, that this whole process is optional, but since data are often not given in a standardised way or with a standard that differs from out workflow, this function makes it possible to take this hassle into account and is supposed to make our lives easier (and more compatible to other workflows down- or upstream).
 
+bla: lajhfölhöda
+     ölakshfsladgkh.
+blubb: ökdsaölkhadgs
+       aökjölkhdgaölks
 ### load_spatial()
 [load_spatial()](https://github.com/EhrmannS/european-mammals/blob/master/code/load_spatial.R)
 ### load_species()
