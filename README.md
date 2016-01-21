@@ -33,7 +33,7 @@ The only limitation for this function is, that the abbreviation must be somehow 
 We should, however, not only build an index for the species we are working with, but also for the spatial files we have to load into the environment. Let me mention, that this whole process is optional, but since data are often not given in a standardised way or with a standard that differs from out workflow, this function makes it possible to take this hassle into account and is supposed to make our lives easier (and more compatible to other workflows down- or upstream).
 
 | | |
-|--|----|
+|---|----|
 | path |  |
 | type |  |
 | incl |  |
@@ -43,7 +43,7 @@ We should, however, not only build an index for the species we are working with,
 [load_spatial()](https://github.com/EhrmannS/european-mammals/blob/master/code/load_spatial.R)
 
 | | |
-|--|----|
+|---|----|
 | path |  |
 | sbst |  |
 | load |  |
@@ -53,7 +53,7 @@ We should, however, not only build an index for the species we are working with,
 [load_species()](https://github.com/EhrmannS/european-mammals/blob/master/code/load_species.R)
 
 | | |
-|--|----|
+|---|----|
 | path |  |
 | soi |  |
 
@@ -61,7 +61,7 @@ We should, however, not only build an index for the species we are working with,
 [european_mammals()](https://github.com/EhrmannS/european-mammals/blob/master/code/european_mammals.R)
 
 | | |
-|--|----|
+|---|----|
 | type |  |
 | data |  |
 | buffer |  |
@@ -74,7 +74,7 @@ We should, however, not only build an index for the species we are working with,
 [check_data()](https://github.com/EhrmannS/european-mammals/blob/master/code/check_data.R)
 
 | | |
-|--|----|
+|---|----|
 | data |  |
 | index |  |
 | column |  |
