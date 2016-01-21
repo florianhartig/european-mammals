@@ -34,9 +34,10 @@ We should, however, not only build an index for the species we are working with,
 
 | | |
 |--:|:----|
-| bla | lajhfölhöda sadddddddddddddddddddfasdgasdgölkökjagök dsökjgösdalkh ldölkh alösdkghölkh sadglökhölaksdhg ölkahsd göhaösldkhg öashdg öhsdölk ghs |
-| blubb | lajhfölhöda sadddddddddddddddddddfasdgasdgölkökjagök dsökjgösdalkh ldölkh alösdkghölkh sadglökhölaksdhg ölkahsd göhaösldkhg öashdg öhsdölk ghs |
-
+| path |  |
+| type |  |
+| incl |  |
+| abbr |  |
 
 ### load_spatial()
 [load_spatial()](https://github.com/EhrmannS/european-mammals/blob/master/code/load_spatial.R)
