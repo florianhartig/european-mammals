@@ -23,7 +23,13 @@ There are different options available on how to extract ocurrence of mammals (co
 Often we want to use some kind of abbreviation for species and maybe also for spatial information. To this end, we have the opportunity to set up an index, which acts like a look-up-table, for both spatial information and species (build_index()).  
 In the following paragraphs you will find an explanation to the exact functionality of each of these functions and a documentation on all their arguments.
 ### build_index()
-[build_index()](https://github.com/EhrmannS/european-mammals/blob/master/code/build_index.R) is the first function we usually run. A typical use-case is, if we want to work with some kind of abbreviation for the species we are dealing with. I prefer a three letter code (apo_fla) to abbreviate the species I am working with, but in some cases two letters might be enough (APFL) or even four letters or maybe only the genus of a group of species is required and/or you prefer capital letters (ApoFla). The only limitation for this function is, that the abbreviation must be somehow a derivative of the original names, this becomes more apparent soon.
+[build_index()](https://github.com/EhrmannS/european-mammals/blob/master/code/build_index.R) is the first function we usually run. A typical use-case is, if we want to work with some kind of abbreviation for the species we are dealing with. I prefer a three letter code (apo_fla) to abbreviate the species I am working with, but in some cases 
+* two letters might be enough (APFL) or 
+* four letters might be required or 
+* only the genus of a group of species is required and/or 
+* you prefer other combinations of some kind (ApoFla).
+The only limitation for this function is, that the abbreviation must be somehow a derivative of the original names, this becomes more apparent soon.  
+We should, however, not only build an index for the species we are working with, but also for the spatial files we have to load into the environment. 
 
 
 ### load_spatial()
