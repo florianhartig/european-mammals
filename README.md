@@ -23,12 +23,17 @@ There are different options available on how to extract ocurrence of mammals (co
 Often we want to use some kind of abbreviation for species and maybe also for spatial information. To this end, we have the opportunity to set up an index, which acts like a look-up-table, for both spatial information and species (build_index()).  
 In the following paragraphs you will find an explanation to the exact functionality of each of these functions and a documentation on all their arguments.
 ### build_index()
-This is the first function we usually run. A typical use-case is, if we want to work with some kind of abbreviation for the species we are dealing with. I prefer a three letter code (apo_fla) to abbreviate the species I am working with, but in some cases two letters might be enough (APFL) or even four letters or maybe only the genus of a group of species is required and/or you prefer capital letters (ApoFla). The only limitation for this function is, that the abbreviation must be somehow a derivative of the original names.
+[build_index()](https://github.com/EhrmannS/european-mammals/blob/master/code/build_index.R) is the first function we usually run. A typical use-case is, if we want to work with some kind of abbreviation for the species we are dealing with. I prefer a three letter code (apo_fla) to abbreviate the species I am working with, but in some cases two letters might be enough (APFL) or even four letters or maybe only the genus of a group of species is required and/or you prefer capital letters (ApoFla). The only limitation for this function is, that the abbreviation must be somehow a derivative of the original names, this becomes more apparent soon.
+
 
 ### load_spatial()
+[load_spatial()](https://github.com/EhrmannS/european-mammals/blob/master/code/load_spatial.R)
 ### load_species()
+[load_species()](https://github.com/EhrmannS/european-mammals/blob/master/code/load_species.R)
 ### european_mammals()
+[european_mammals()](https://github.com/EhrmannS/european-mammals/blob/master/code/european_mammals.R)
 ### check_data()
+[check_data()](https://github.com/EhrmannS/european-mammals/blob/master/code/check_data.R)
 
 ## Examples
 
