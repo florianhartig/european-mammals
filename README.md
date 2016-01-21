@@ -23,7 +23,7 @@ There are different options available on how to extract ocurrence of mammals (co
 Often we want to use some kind of abbreviation for species and maybe also for spatial information. To this end, we have the opportunity to set up an index, which acts like a look-up-table, for both spatial information and species (`build_index()`).  
 In the following paragraphs you will find an explanation to the exact functionality of each of these functions and a documentation on all their arguments.
 ### `build_index()`
-[build_index()](https://github.com/EhrmannS/european-mammals/blob/master/code/build_index.R) is the first function we usually run. A typical use-case is, if we want to work with some kind of abbreviation for the species we are dealing with. We have in this specific situation the SVG-files which we have given have the species' name of which the ocurrence is shown. The output of this function than relates the files name to the abbreviation we prefer. I prefer a three letter code (apo_fla), but in some cases 
+[`build_index()`](https://github.com/EhrmannS/european-mammals/blob/master/code/build_index.R) is the first function we usually run. A typical use-case is, if we want to work with some kind of abbreviation for the species we are dealing with. We have in this specific situation the SVG-files which we have given have the species' name of which the ocurrence is shown. The output of this function than relates the files name to the abbreviation we prefer. I prefer a three letter code (apo_fla), but in some cases 
 * two letters might be enough (ap_fl) or 
 * four letters might be required (apod_flav) or 
 * only the genus of a group of species is required and/or 
@@ -42,8 +42,8 @@ We should, however, not only build an index for the species we are working with,
 The last agrument needs some explaining:  
 The recorded original names are internally saved as a character vector with the name `files` and with `i` as iterator through the elements. Each of these elements can be manipulated with a wide range of character-specific functions such as `substr()`, `toupper()` or `paste()`. One input for this argument might thus look like `abbr = substr(files[i], 1, 3)`.
 
-### load_spatial()
-[load_spatial()](https://github.com/EhrmannS/european-mammals/blob/master/code/load_spatial.R)
+### `load_spatial()`
+[`load_spatial()`](https://github.com/EhrmannS/european-mammals/blob/master/code/load_spatial.R)
 
 | | |
 |---|----|
@@ -52,16 +52,16 @@ The recorded original names are internally saved as a character vector with the 
 | load |  |
 | index |  |
 
-### load_species()
-[load_species()](https://github.com/EhrmannS/european-mammals/blob/master/code/load_species.R)
+### `load_species()`
+[`load_species()`](https://github.com/EhrmannS/european-mammals/blob/master/code/load_species.R)
 
 | | |
 |---|----|
 | path |  |
 | soi |  |
 
-### european_mammals()
-[european_mammals()](https://github.com/EhrmannS/european-mammals/blob/master/code/european_mammals.R)
+### `european_mammals()`
+[`european_mammals()`](https://github.com/EhrmannS/european-mammals/blob/master/code/european_mammals.R)
 
 | | |
 |---|----|
@@ -73,8 +73,8 @@ The recorded original names are internally saved as a character vector with the 
 | index_spatial |  |
 | mask |  |
 
-### check_data()
-[check_data()](https://github.com/EhrmannS/european-mammals/blob/master/code/check_data.R)
+### `check_data()`
+[`check_data()`](https://github.com/EhrmannS/european-mammals/blob/master/code/check_data.R)
 
 | | |
 |---|----|
