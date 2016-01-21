@@ -41,12 +41,44 @@ We should, however, not only build an index for the species we are working with,
 
 ### load_spatial()
 [load_spatial()](https://github.com/EhrmannS/european-mammals/blob/master/code/load_spatial.R)
+
+| | |
+|--:|:----|
+| path |  |
+| sbst |  |
+| load |  |
+| index |  |
+
 ### load_species()
 [load_species()](https://github.com/EhrmannS/european-mammals/blob/master/code/load_species.R)
+
+| | |
+|--:|:----|
+| path |  |
+| soi |  |
+
 ### european_mammals()
 [european_mammals()](https://github.com/EhrmannS/european-mammals/blob/master/code/european_mammals.R)
+
+| | |
+|--:|:----|
+| type |  |
+| data |  |
+| buffer |  |
+| soi |  |
+| index_species |  |
+| index_spatial |  |
+| mask |  |
+
 ### check_data()
 [check_data()](https://github.com/EhrmannS/european-mammals/blob/master/code/check_data.R)
+
+| | |
+|--:|:----|
+| data |  |
+| index |  |
+| column |  |
+| mask |  |
 
 ## Examples
 
