@@ -13,12 +13,13 @@ Copying these information from books can be a laborious process and even if the 
 > the images and their behaviour are defined as XML text files [(wiki)](https://en.wikipedia.org/wiki/Scalable_Vector_Graphics).
 
 This means that all things which are visable in the file when it is displayed as image, are somehow coded into the file and can be read out as text as well. You can actually try this out yourself, by opening any SVG-image in your favourite text editor or by looking at [this link](https://raw.githubusercontent.com/EhrmannS/european-mammals/master/apo_fla.svg), which shows the text that your browser or any other software for displaying SVGs uses to creat the below map. I created this image as proof of concept with code you can find in the file [main.R](https://github.com/EhrmannS/european-mammals/blob/master/main.R) (it shows the ocurrence of *Apodemus flavicollis* in Estonia).
-![*Apodemus flavicollis* in Estonia](https://rawgit.com/EhrmannS/european-mammals/master/apo_fla.svg "*Apodemus flavicollis* in Estonia")  
+![Apodemus flavicollis in Estonia](https://rawgit.com/EhrmannS/european-mammals/master/apo_fla.svg "Apodemus flavicollis in Estonia")  
 The compendium behind the *Atlas of European Mammals* decided at some point, that they would divide Europe into rectangular subunits, for which it would be easy to find mammal occurences and so that they could be visualised meaningfully. This grid was for comparison oriented on the grid system which has before already been used in the *Atlas Florae Europaeae* (but read more on this topic [here](http://www.luomus.fi/en/new-grid-system-atlas-florae-europaeae)).  
 Consequently it was neccessary to draw all of these grid-elements into the images/maps, they would provide on their website and fortunately all of these elements also include their respective name in the text which is used to define the SVG. Naturally the information if a certain species exists in this grid is also given in this text and that makes it possible for others (like us) to extract and combine these information and start deriving additional information from it.
 
 ## The Procedure
-
+The core function of this package of functions is european_mammals(). Here we specify which extraction-method should be used, if we want to use a buffer around the spatial information we gave and for which species ocurrence should be extracted.  
+There are different options available on how to extract ocurrence of mammals and we should in most cases load the spatial information and data on species of interest into the working environment before carrying out any other operations. Often we want to use some kind of abbreviation for species and maybe also for spatial information.
 ### build_index()
 ### load_spatial()
 ### load_species()
