@@ -23,11 +23,11 @@ There are different options available on how to extract ocurrence of mammals (co
 Often we want to use some kind of abbreviation for species and maybe also for spatial information. To this end, we have the opportunity to set up an index, which acts like a look-up-table, for both spatial information and species (`build_index()`).  
 In the following paragraphs you will find an explanation to the exact functionality of each of these functions and a documentation on all their arguments.
 ### `build_index()`
-[`build_index()`](https://github.com/EhrmannS/european-mammals/blob/master/code/build_index.R) is the first function we usually run. A typical use-case is, if we want to work with some kind of abbreviation for the species we are dealing with. We have in this specific situation the SVG-files which we have given have the species' name of which the ocurrence is shown. The output of this function than relates the files name to the abbreviation we prefer. I prefer a three letter code (apo_fla), but in some cases 
-* two letters might be enough (ap_fl) or 
-* four letters might be required (apod_flav) or 
+[`build_index()`](https://github.com/EhrmannS/european-mammals/blob/master/code/build_index.R) is the first function we usually run. A typical use-case is, if we want to work with some kind of abbreviation for the species we are dealing with. We have in this specific situation the SVG-files which we have given have the species' name of which the ocurrence is shown. The output of this function than relates the files name to the abbreviation we prefer. I prefer a three letter code (*apo_fla*), but in some cases 
+* two letters might be enough (*ap_fl*) or 
+* four letters might be required (*apod_flav*) or 
 * only the genus of a group of species is required and/or 
-* you prefer other combinations of some kind (ApoFla, APFL, Apo_fla, ...).  
+* you prefer other combinations of some kind (*ApoFla*, *APFL*, *Apo_fla*, ...).  
 
 The only limitation for this function is, that the abbreviation must be somehow a derivative of the original filenames, this becomes more apparent soon.  
 We should, however, not only build an index for the species we are working with, but also for the spatial files we have to load into the environment. Let me mention, that this whole process is optional. Since data are often not given in a standardised way or with a standard that differs from our standard, this function is supposed to make our lives easier (and more compatible with other workflows down- or upstream), by relating different names to each other.
