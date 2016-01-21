@@ -3,13 +3,13 @@ Code and instruction how to extract occurence data from www.european-mammals.org
 
 Jump to
 * [Motivation](https://github.com/EhrmannS/european-mammals#motivation)
-* [The Procedure](https://github.com/EhrmannS/european-mammals#)
-  * [build_index()](https://github.com/EhrmannS/european-mammals#)
-  * [load_spatial()](https://github.com/EhrmannS/european-mammals#)
-  * [load_species()](https://github.com/EhrmannS/european-mammals#)
-  * [european_mammals()](https://github.com/EhrmannS/european-mammals#)
-  * [check_data()](https://github.com/EhrmannS/european-mammals#)
-* [Examples](https://github.com/EhrmannS/european-mammals#)
+* [The Procedure](https://github.com/EhrmannS/european-mammals#the-procedure)
+  * [build_index()](https://github.com/EhrmannS/european-mammals#build_index)
+  * [load_spatial()](https://github.com/EhrmannS/european-mammals#load_spatial)
+  * [load_species()](https://github.com/EhrmannS/european-mammals#load_species)
+  * [european_mammals()](https://github.com/EhrmannS/european-mammals#european_mammals)
+  * [check_data()](https://github.com/EhrmannS/european-mammals#check_data)
+* [Examples](https://github.com/EhrmannS/european-mammals#examples)
 
 
 ## Motivation
