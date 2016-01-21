@@ -27,7 +27,7 @@ rm(index_grid, index_shape, abbr_grid, abbr_shape, abbr_species)
 # load spatial and species information
 # setwd("/home/steffen/Documents/git/European Mammals/data/")
 load_spatial(path="./data/spatial/", sbst=c("Europe", "Spain", "France", "Czech_Republic", "Poland", "Norway", 
-                    "Germany", "United_Kingdom", "Sweden", "Finland"), 
+                                            "Germany", "United_Kingdom", "Sweden", "Finland", "Estonia"), 
              index=index_spatial, load="grids")
 
 soi <- c("apo_syl", "apo_fla", "mic_sub", "mic_agr", "sor_min", "sor_ara", "myo_gla")
@@ -36,23 +36,23 @@ soi2 <- index_species$original[index_species$code %in% soi]
 soi2 <- soi2[-7]
 load_species(path="./data/SVGs/", soi = soi2)
 
-euro_sp_country <- european_mammals(type="country", 
-                 c("Spain", "France", "Czech_Republic", "Poland", "Norway", 
-                                   "Germany", "United_Kingdom", "Sweden", "Finland"), 
-                 soi=soi2, 
-                 index_species=index_species, 
-                 index_spatial=index_spatial2, 
-                 mask="Sorex minutissimus")
+euro_sp_country <- european_mammals(type = "country", 
+                                    data = c("Spain", "France", "Czech_Republic", "Poland", "Norway", 
+                                             "Germany", "United_Kingdom", "Sweden", "Finland", "Estonia"), 
+                                    soi = soi2, 
+                                    index_species = index_species, 
+                                    index_spatial = index_spatial2, 
+                                    mask = "Sorex minutissimus")
 
 study <- "butet2006"; years <- 1995; data <- read.csv(paste("/home/steffen/Documents/git/PhD/small mammals and the landscape/data/", study, "/", study, "_meta_", years, ".csv", sep=""))
 
-euro_sp_points <- european_mammals(type="points", 
-                 data=data, 
-                 soi=soi2, 
-                 buffer <- 25000, 
-                 index_species=index_species, 
-                 index_spatial=index_spatial2, 
-                 mask="Sorex minutissimus")
+euro_sp_points <- european_mammals(type = "points", 
+                                   data = data, 
+                                   soi = soi2, 
+                                   buffer = 25000, 
+                                   index_species = index_species, 
+                                   index_spatial = index_spatial2, 
+                                   mask = "Sorex minutissimus")
 
 
 # make map of studies
