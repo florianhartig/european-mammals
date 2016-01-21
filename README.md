@@ -18,14 +18,22 @@ The compendium behind the *Atlas of European Mammals* decided at some point, tha
 Consequently it was neccessary to draw all of these grid-elements into the images/maps, they would provide on their website and fortunately all of these elements also include their respective name in the text which is used to define the SVG. Naturally the information if a certain species exists in this grid is also given in this text and that makes it possible for others (like us) to extract and combine these information and start deriving additional information from it.
 
 ## The Procedure
-The core function of this package of functions is european_mammals(). Here we specify which extraction-method should be used, if we want to use a buffer around the spatial information we gave and for which species ocurrence should be extracted.  
-There are different options available on how to extract ocurrence of mammals and we should in most cases load the spatial information and data on species of interest into the working environment before carrying out any other operations (load_spatial() and load_species()).  
+The core function of this package of functions is european_mammals(). Here we specify which extraction-method should be used, if we want to use a (circular) buffer around the spatial information we gave and for which species ocurrence should be extracted.  
+There are different options available on how to extract ocurrence of mammals (coordinates, per country, for arbitrary polygons or for a rectangular area identified in an R plot) and we should in most cases load the spatial information and data on species of interest into the working environment before carrying out any other operations (load_spatial() and load_species()).  
 Often we want to use some kind of abbreviation for species and maybe also for spatial information. To this end, we have the opportunity to set up an index, which acts like a look-up-table, for both spatial information and species (build_index()).  
 In the following paragraphs you will find an explanation to the exact functionality of each of these functions and a documentation on all their arguments.
 ### build_index()
+This is the first function we usually run. A typical use-case is, if we want to work with some kind of abbreviation for the species we are dealing with. I prefer a three letter code (apo_fla) to abbreviate the species I am working with, but in some cases two letters might be enough (APFL) or even four letters or maybe only the genus of a group of species is required and/or you prefer capital letters (ApoFla). The only limitation for this function is, that the abbreviation must be somehow a derivative of the original names.
+
 ### load_spatial()
 ### load_species()
 ### european_mammals()
 ### check_data()
 
 ## Examples
+
+| Left-Aligned  | Center Aligned  | Right Aligned |
+| :------------ |:---------------:| -----:|
+| col 3 is      | some wordy text | $1600 |
+| col 2 is      | centered        |   $12 |
+| zebra stripes | are neat        |    $1 |
