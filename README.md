@@ -19,12 +19,11 @@ Consequently it was neccessary to draw all of these grid-elements into the image
 
 ## The Procedure
 The core function of this package of functions is european_mammals(). Here we specify which extraction-method should be used, if we want to use a buffer around the spatial information we gave and for which species ocurrence should be extracted.  
-There are different options available on how to extract ocurrence of mammals and we should in most cases load the spatial information and data on species of interest into the working environment before carrying out any other operations. Often we want to use some kind of abbreviation for species and maybe also for spatial information.
+There are different options available on how to extract ocurrence of mammals and we should in most cases load the spatial information and data on species of interest into the working environment before carrying out any other operations (load_spatial() and load_species()). Often we want to use some kind of abbreviation for species and maybe also for spatial information. To this end, we have the opportunity to set up an index, which acts like a look-up-table, for both spatial information and species (build_index()). In the following paragraphs you will find an explanation to the exact functionality of each of these functions and a documentation on all their arguments.
 ### build_index()
 ### load_spatial()
 ### load_species()
 ### european_mammals()
 ### check_data()
-
 
 ## Examples
