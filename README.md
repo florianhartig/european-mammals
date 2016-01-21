@@ -40,7 +40,7 @@ We should, however, not only build an index for the species we are working with,
 | abbr | give a character string of a combination of functions which manipulate the characters of the recorded original names, to come up with your abbreviation of choice.|
 
 The last agrument needs some explaining:  
-The recorded original names are internally saved as a character vector with the name `files` and with `i` as iterator through the elements. Each of these elements can be manipulated with a wide range of character-specific functions such as `substr()`, `toupper()` or `paste()`. One input for this argument might thus look like `abbr = substr(files[i], 1, 3)`.
+  The recorded original names are internally saved as a character vector with the name `files` and with `i` as iterator through the elements. Each of these elements can be manipulated with a wide range of character-specific functions such as `substr()`, `toupper()` or `paste()`. One input for this argument might thus look like `abbr = substr(files[i], 1, 3)`.
 
 ### `load_spatial()`
 [`load_spatial()`](https://github.com/EhrmannS/european-mammals/blob/master/code/load_spatial.R)
